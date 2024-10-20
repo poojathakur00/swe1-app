@@ -10,29 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:12
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: github_ci_test
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-        # Set a 10 second wait to ensure the service is running
-        options: >-
-          --health-cmd "pg_isready -U postgres"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-
     steps:
     - name: Check out the code
       uses: actions/checkout@v3
@@ -40,18 +17,15 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.11
+        python-version: 3.11  # Set the correct Python version
 
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run migrations
-      run: |
-        python manage.py migrate
-
     - name: Run tests
       run: |
+        python manage.py migrate
         python manage.py test
 
