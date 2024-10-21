@@ -1,6 +1,7 @@
 language: python
 install:
 - pip install -r requirements.txt
+- pip install black flake8 coverage
 script:
 - black --check . 
 - flake8 --max-line-length=150 . 
