@@ -1,16 +1,13 @@
 language: python
-# Uncomment this if you want to specify Python 3.11
-# python:
-# - "3.11"
 install:
 - pip install -r requirements.txt
 script:
-- black --check . # Run black for formatting check
-- flake8 --max-line-length=150 . # Run flake8 for linting
-- coverage run manage.py test # Run tests and measure coverage
-- env # Show environment variables (helpful for debugging)
+- black --check . 
+- flake8 --max-line-length=150 . 
+- coverage run manage.py test
+- env
 after_success:
-- coveralls # Upload coverage report to Coveralls
+- coveralls 
 deploy:
 provider: elasticbeanstalk
 access_key_id: $AWS_ID
