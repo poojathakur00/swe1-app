@@ -1,10 +1,4 @@
-![Build Status](https://travis-ci.com/poojathakur00/swe1-app.svg?branch=master)
-
-
-
-
-
-
+https://app.travis-ci.com/poojathakur00/swe1-app.svg?token=mfgmm8RRkgxGVCqTf2gG&branch=master
 
 
 
