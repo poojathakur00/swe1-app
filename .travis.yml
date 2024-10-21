@@ -1,7 +1,25 @@
 language: python
-python:
-
+# Uncomment this if you want to specify Python 3.11
+# python:
+# - "3.11"
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - pytest
+- black --check . # Run black for formatting check
+- flake8 --max-line-length=150 . # Run flake8 for linting
+- coverage run manage.py test # Run tests and measure coverage
+- env # Show environment variables (helpful for debugging)
+after_success:
+- coveralls # Upload coverage report to Coveralls
+deploy:
+provider: elasticbeanstalk
+access_key_id: $AWS_ID
+secret_access_key: $AWS_KEY
+region: us-west-1
+app: nocheckthing
+env: django-env5
+bucket_name: elasticbeanstalk-us-west-1-239144141129 # Your S3 bucket for deployment
+on:
+repo: poojathakur00/swe1-app 
+branch: master 
+skip_cleanup: 'true'
