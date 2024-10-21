@@ -4,7 +4,7 @@ install:
 - pip install black flake8 coverage
 script:
 - black --check . 
-- flake8 --max-line-length=150 . 
+- flake8 --max-line-length=88 . 
 - coverage run manage.py test
 - env
 after_success:
