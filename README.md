@@ -1,7 +1,4 @@
-https://app.travis-ci.com/poojathakur00/swe1-app.svg?token=mfgmm8RRkgxGVCqTf2gG&branch=master
-
-
-
+[![Build Status](https://app.travis-ci.com/poojathakur00/swe1-app.svg?token=mfgmm8RRkgxGVCqTf2gG&branch=master)](https://app.travis-ci.com/poojathakur00/swe1-app)
 
 
 
