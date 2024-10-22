@@ -1,3 +1,7 @@
 Django
 pytz
 sqlparse
+black
+flake8
+coverage
+coveralls
