@@ -18,8 +18,8 @@ deploy:
   access_key_id: $AWS_ID
   secret_access_key: $AWS_KEY
   region: us-west-1
-  app: nocheckthing
-  env: django-env5
+  app: newebapp
+  env: my-env
   bucket_name: elasticbeanstalk-us-west-1-239144141129
   on:
     repo: poojathakur00/swe1-app
