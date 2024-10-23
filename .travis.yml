@@ -13,14 +13,14 @@ script:
 after_success:
 - coveralls # Upload coverage report to Coveralls
 deploy:
-provider: elasticbeanstalk
-access_key_id: $AWS_ID 
-secret_access_key: $AWS_KEY 
-region: us-west-1
-app: nocheckthing
-env: django-env5
-bucket_name: elasticbeanstalk-us-west-1-239144141129 # Your S3 bucket for deployment
-on:
-repo: poojathakur00/swe1-app 
-branch: master 
-skip_cleanup: 'true'
+- skip_cleanup: 'true'
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ID
+  secret_access_key: $AWS_KEY
+  region: us-west-1
+  app: nocheckthing
+  env: django-env5
+  bucket_name: elasticbeanstalk-us-west-1-239144141129
+  on:
+    repo: poojathakur00/swe1-app
+    branch: master
