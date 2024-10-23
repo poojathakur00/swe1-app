@@ -1,0 +1,78 @@
+[
+    {
+      "Namespace": "aws:elasticbeanstalk:application:environment",
+      "OptionName": "DJANGO_SETTINGS_MODULE",
+      "Value": "mysite.settings"
+    },
+    {
+      "Namespace": "aws:elasticbeanstalk:application:environment",
+      "OptionName": "PYTHONPATH",
+      "Value": "/var/app/current/mysite:$PYTHONPATH"
+    },
+    {
+      "Namespace": "aws:elasticbeanstalk:container:python",
+      "OptionName": "WSGIPath",
+      "Value": "mysite.wsgi:application"
+    },
+    {
+      "Namespace": "aws:autoscaling:launchconfiguration",
+      "OptionName": "RootVolumeType",
+      "Value": "gp3"
+    },
+    {
+      "Namespace": "aws:autoscaling:launchconfiguration",
+      "OptionName": "DisableIMDSv1",
+      "Value": "true"
+    },
+    {
+      "Namespace": "aws:elasticbeanstalk:environment:process:default",
+      "OptionName": "HealthCheckPath",
+      "Value": "/health"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "MeasureName",
+      "Value": "CPUUtilization"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "Statistic",
+      "Value": "Average"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "Unit",
+      "Value": "Percent"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "Period",
+      "Value": "1"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "BreachDuration",
+      "Value": "1"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "UpperThreshold",
+      "Value": "70"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "LowerThreshold",
+      "Value": "30"
+    },
+    {
+      "Namespace": "aws:autoscaling:trigger",
+      "OptionName": "EvaluationPeriods",
+      "Value": "1"
+    },
+    {
+      "Namespace": "aws:autoscaling:launchconfiguration",
+      "OptionName": "IamInstanceProfile",
+      "Value": "aws-elasticbeanstalk-ec2-profile"
+    }
+  ]
+  

@@ -1,7 +1,7 @@
 language: python
 # Uncomment this if you want to specify Python 3.11
 python:
-- '3.11'
+- '3.9'
 install:
 - pip install -r requirements.txt
 - pip install black flake8 coverage coveralls 
