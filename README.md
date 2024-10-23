@@ -8,7 +8,7 @@
 Application URLS
 -------------------------------------
 
-http://django-env5.eba-5nua2zsy.us-west-1.elasticbeanstalk.com/polls
+my-env.eba-drckgwre.us-west-1.elasticbeanstalk.com 
 
 
 
